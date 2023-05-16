@@ -14,9 +14,8 @@
 #include "esp32s3/rom/cache.h"
 #include <esp_rom_uart.h>
 #include "soc/extmem_reg.h"
-#include "soc/cache_memory.h"
+#include <soc/ext_mem_defs.h>
 #include "hal/cpu_hal.h"
-#include "hal/cpu_types.h"
 #include <esp_rom_sys.h>
 
 #include <zephyr/types.h>
@@ -24,7 +23,7 @@
 #include <zephyr/arch/xtensa/arch.h>
 
 #include <xtensa/core-macros.h>
-#include <esp32s3/clk.h>
+#include <esp_private/esp_clk.h>
 
 void __esp_platform_start(void);
 
