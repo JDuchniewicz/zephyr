@@ -268,7 +268,8 @@ static void esp_wifi_handle_sta_disconnect_event(void *event_data)
 		break;
 	}
 
-	if (IS_ENABLED(CONFIG_ESP32_WIFI_STA_RECONNECT)) {
+	if (IS_ENABLED(CONFIG_ESP32_WIFI_STA_RECONNECT) &&
+	    (event->reason != WIFI_REASON_ASSOC_LEAVE)) {
 		esp32_data.state = ESP32_STA_CONNECTING;
 		esp_wifi_connect();
 	} else {
